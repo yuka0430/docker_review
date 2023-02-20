@@ -12,11 +12,12 @@ services:
         target: "/etc/apache2/sites-enabled/000-default.conf"
       - type: bind
         source: "./php-apache/app"
-        target: "/var/www/app"
+        target: "/var/www/docker_review"
     depends_on:
       - review-mysql
 
   review-mysql:
     image: mysql:8.0
     environment:
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=e2QNqCUd
+      - MYSQL_DATABASE=docker_review
